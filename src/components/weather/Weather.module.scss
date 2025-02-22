@@ -1,0 +1,45 @@
+@use "./../../styles/colors" as *;
+@use "./../../styles/mixins" as *;
+@use "./../../styles/variables" as *;
+
+.container {
+  width: 80%;
+  height: 85%;
+  background-color: $mainColorDark;
+  border-radius: $outerRadius;
+  @include flex(space-between, center);
+  padding: 40px;
+  .leftSide {
+    width: 60%;
+    height: $fullSize;
+    background-color: beige;
+    @include flex(space-between, center, column);
+    .searchItemBox {
+      width: $fullSize;
+      height: 300px;
+      background-color:chocolate;
+      @include flex(flex-start,flex-start, column);
+      gap: 10px;
+      .searchItem{
+        width: $fullSize;
+        height: 80px;
+      }
+      span{
+        margin-bottom: 12px;
+        @include title()
+      }
+    }
+
+    .favouritesItemBox{
+      width: $fullSize;
+      height: 200px;
+      background-color: rgb(93, 222, 237);
+    }
+  }
+
+  .rightSide {
+    width: 35%;
+    height: $fullSize;
+    background-color: rgb(235, 235, 172);
+  }
+}

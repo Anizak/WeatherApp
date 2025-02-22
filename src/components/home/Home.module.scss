@@ -1,0 +1,11 @@
+@use "../../styles/variables" as *;
+@use "../../styles/colors" as * ;
+@use "../../styles/mixins" as *;
+
+
+.container{
+    width: $fullSize;
+    height: $fullViewHeight;
+    background-color: $mainColorLight;
+    @include flex(center, center);
+}

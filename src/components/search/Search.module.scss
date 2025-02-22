@@ -1,0 +1,28 @@
+@use "../../styles/colors" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+
+.searchBox{
+    width: $fullSize;
+    height: 50px;
+    form{
+        width: $fullSize;
+        height: $fullSize;
+
+        input{
+            width: $fullSize;
+            height: $fullSize;
+            background-color: $mainColorMiddle;
+            outline: none;
+            border: none;
+            border-radius: $innerRadius;
+            color: $textColorMiddle;
+            font-size: 16px;
+            font-weight: 200;
+            padding: 0 $inputPadding;
+        }
+    }
+}
+
+

@@ -1,0 +1,15 @@
+@use "../styles/colors" as *;
+
+@mixin flex($justify: flex-start, $align: flex-start, $flexDirection: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $flexDirection;
+}
+
+@mixin title($font: 14px, $color: $textColorDark){
+  font-size: $font;
+  color: $color;
+  text-transform: uppercase;
+  font-weight: 400;
+}
