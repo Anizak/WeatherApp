@@ -9,16 +9,18 @@ import CurrentWeather from "../currentWeather/CurrentWeather";
 const Weather = () => {
   const {currentLocationSearch} = useSelector(selectWeather);
   
+  
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
         <Search/>
         <div className={styles.searchItemBox}>
+
           {/* <span>Latest Searches</span>
           <div className={styles.searchItem}> <WeatherItem/></div>
           <div className={styles.searchItem}> <WeatherItem/></div>
           <div className={styles.searchItem}> <WeatherItem/></div> */}
-          <CurrentWeather/>
+          {Object.keys(currentLocationSearch).length > 0 && <CurrentWeather/>}
         </div>
         <div className={styles.favouritesItemBox}>
 

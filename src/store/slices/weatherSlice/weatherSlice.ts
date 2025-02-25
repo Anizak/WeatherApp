@@ -31,11 +31,10 @@ const weatherSlice = createSlice({
         state.loading = true;
       })
       .addCase(getLocation.fulfilled, (state, action: PayloadAction<any>) => {
-        console.log(action);
         
         state.loading = false;
-        state.currentLocationSearch = action.payload.location; 
-        state.currentWeather = action.payload.weather;
+        state.currentLocationSearch = action.payload.location ? action.payload.location : {}; 
+        state.currentWeather = action.payload.weather? action.payload.weather : {};
       })
       .addCase(getLocation.rejected, (state, action) => {
         state.loading = false;
