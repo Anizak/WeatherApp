@@ -1,0 +1,24 @@
+@use "./../../styles/colors" as *;
+@use "./../../styles/mixins" as *;
+@use "./../../styles/variables" as *;
+
+
+.container{
+    width: $fullSize;
+    height: auto;
+    background-color: pink;
+    border-radius: 15px;
+    padding: 15px;
+    @include flex(space-between, flex-start, column);
+    gap: 10px;
+
+    p{
+        @include title();
+        font-weight: 600;
+    }
+    .todayFoecast{
+        width: $fullSize;
+        height: 130px;
+        background-color: beige;
+    }
+}

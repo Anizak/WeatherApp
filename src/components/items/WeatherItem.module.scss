@@ -3,8 +3,22 @@
 @use "../../styles/variables" as *;
 
 .container{
-    width: $fullSize;
+    width: 90px;
     height: $fullSize;
     background-color: $mainColorMiddle;
-    border-radius: $innerRadius;
+    // border-radius: $innerRadius;
+    padding: 10px;
+    border-right: 1px solid $textColorMiddle;
+    @include flex(space-between, center, column);
+    .time{
+        @include title(15px);
+    }
+    img{
+        width: 70px;
+        height: 70px;
+    }
+    .temperature{
+        @include title(20px, $textColorLight);
+        font-weight: 500;
+    }
 }

@@ -16,7 +16,7 @@
     @include flex(space-between, center, column);
     .searchItemBox {
       width: $fullSize;
-      height: 300px;
+      height: auto;
       background-color:chocolate;
       @include flex(flex-start,flex-start, column);
       gap: 10px;
