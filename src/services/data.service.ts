@@ -1,67 +1,68 @@
-import img from "../assets/images/sun.svg"
+import sun from "../assets/images/sun.svg"
+import cloudy from "../assets/images/partly-cloudy.png"
+import fog from "../assets/images/haze.png"
+import drizzle from "../assets/images/drizzle.png"
+import rain from "../assets/images/rain.png"
+import snow from "../assets/images/snowfall.png"
+import thunder from "../assets/images/storm.png"
+import snowgraind from "../assets/images/haze.png"
 
 export const weatherTypes : Array<any> =[
     {
     id : 1,
     name : "Clear sky",
     shortName: "Sunny",
-    icon : img,
+    icon : sun,
     weatherCodes : [0],
 },
     {
     id : 2,
     name : "Mainly clear, partly cloudy",
     shortName: "Cloudy",
-    icon : img,
+    icon : cloudy,
     weatherCodes : [1, 2, 3]
 },
     {
     id : 3,
     name : "Fog and depositing rime fog",
     shortName: "Fog",
-    icon : img,
+    icon : fog,
     weatherCodes : [45, 48]
 },
     {
     id : 4,
     name : "Drizzle: Light, moderate, and dense intensity",
     shortName: "Drizzle",
-    icon : img,
+    icon : drizzle,
     weatherCodes : [51, 53, 55, 56, 57]
 },
     {
     id : 5,
     name : "Rain: Slight, moderate and heavy intensity",
     shortName: "Rain",
-    icon : img,
+    icon : rain,
     weatherCodes : [61, 63, 65, 66, 67,80, 81, 82]
 },
     {
     id : 6,
     name : "Snow fall: Slight, moderate, and heavy intensity",
     shortName: "Snow",
-    icon : img,
-    weatherCodes : [71, 73, 75]
+    icon : snow,
+    weatherCodes : [71, 73, 75,85, 86]
 },
+  
     {
     id : 7,
-    name : "Snow showers slight and heavy",
-    shortName: "Snow showers",
-    icon : img,
-    weatherCodes : [85, 86]
-},
-    {
-    id : 8,
     name : "Thunderstorm: Slight or moderate",
     shortName: "Thunderstorm",
-    icon : img,
+    icon : thunder,
     weatherCodes : [95, 96, 99]
 },
     {
-    id : 9,
+    id : 8,
     name : "Snow grains",
     shortName: "Snow grains",
-    icon : img,
+    icon : snowgraind,
     weatherCodes : [77]
 },
 ]
