@@ -20,9 +20,10 @@ export const getTimes = (timeData: any, validTimes: any) => {
 export const weatherDataWithTimes = (
   times: any,
   isDay: any,
-  temperatures: any
+  temperatures: any,
+  weatherCodes: any,
 ) => {
-  const mergedArrays = times.map((elem: any, i: any) => ({time: elem.time, isDay: isDay[i], temperature: temperatures[i]}));
+  const mergedArrays = times.map((elem: any, i: any) => ({time: elem.time, isDay: isDay[i], temperature: temperatures[i], weatherCode: weatherCodes[i]}));
   return mergedArrays;
   
 };

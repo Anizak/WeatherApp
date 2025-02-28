@@ -15,8 +15,10 @@ const TodaysForecast = () => {
   const temperatures = currentWeather.hourly.temperature_2m.filter(
     (elem: any, i: any) => indexes.includes(i)
   );
-  
-  const weatherTimeData = weatherDataWithTimes(timeData, isDay, temperatures);
+  const weatherCodes = currentWeather.hourly.weathercode.filter(
+    (elem: any, i: any) => indexes.includes(i)
+  );
+  const weatherTimeData = weatherDataWithTimes(timeData, isDay, temperatures,weatherCodes);
 
   return (
     <div className={styles.container}>

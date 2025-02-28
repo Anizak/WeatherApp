@@ -1,11 +1,11 @@
-import sun from "../assets/images/sun.svg"
+import sun from "../assets/images/"
 import cloudy from "../assets/images/partly-cloudy.png"
 import fog from "../assets/images/haze.png"
 import drizzle from "../assets/images/drizzle.png"
 import rain from "../assets/images/rain.png"
 import snow from "../assets/images/snowfall.png"
 import thunder from "../assets/images/storm.png"
-import snowgraind from "../assets/images/haze.png"
+import snowgrains from "../assets/images/haze.png"
 
 export const weatherTypes : Array<any> =[
     {
@@ -62,7 +62,7 @@ export const weatherTypes : Array<any> =[
     id : 8,
     name : "Snow grains",
     shortName: "Snow grains",
-    icon : snowgraind,
+    icon : snowgrains,
     weatherCodes : [77]
 },
 ]
