@@ -12,12 +12,12 @@
   .leftSide {
     width: 60%;
     height: $fullSize;
-    background-color: beige;
+    // background-color: beige;
     @include flex(space-between, center, column);
     .searchItemBox {
       width: $fullSize;
       height: auto;
-      background-color:chocolate;
+      // background-color:chocolate;
       @include flex(flex-start,flex-start, column);
       gap: 10px;
       .searchItem{

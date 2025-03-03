@@ -6,11 +6,11 @@
 .container{
     width: $fullSize;
     height: auto;
-    background-color: pink;
+    background-color: $mainColorMiddle;
     border-radius: 15px;
-    padding: 15px;
+    padding: 20px 15px;
     @include flex(space-between, flex-start, column);
-    gap: 10px;
+    gap: 25px;
 
     p{
         @include title();
@@ -18,8 +18,8 @@
     }
     .todayFoecast{
         width: $fullSize;
-        height: 130px;
-        background-color: beige;
+        height: 120px;
+        // background-color: beige;
         @include flex(space-between, center);
         overflow: auto;
         gap: 2px;

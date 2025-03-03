@@ -7,15 +7,16 @@
     height: $fullSize;
     background-color: $mainColorMiddle;
     // border-radius: $innerRadius;
-    padding: 10px;
+    padding: 0 10px;
     border-right: 1px solid $textColorMiddle;
+    flex-shrink: 0;
     @include flex(space-between, center, column);
     .time{
         @include title(15px);
     }
     img{
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
     }
     .temperature{
         @include title(20px, $textColorLight);

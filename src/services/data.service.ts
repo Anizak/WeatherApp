@@ -1,4 +1,4 @@
-import sun from "../assets/images/"
+import sun from "../assets/images/sun.svg"
 import cloudy from "../assets/images/partly-cloudy.png"
 import fog from "../assets/images/haze.png"
 import drizzle from "../assets/images/drizzle.png"
@@ -6,13 +6,16 @@ import rain from "../assets/images/rain.png"
 import snow from "../assets/images/snowfall.png"
 import thunder from "../assets/images/storm.png"
 import snowgrains from "../assets/images/haze.png"
+import night from "../assets/images/night.png"
+import cloudyNight from "../assets/images/cloudy-night.png"
 
 export const weatherTypes : Array<any> =[
     {
     id : 1,
     name : "Clear sky",
     shortName: "Sunny",
-    icon : sun,
+    icon : sun, 
+    nightIcon : night,
     weatherCodes : [0],
 },
     {
@@ -20,6 +23,7 @@ export const weatherTypes : Array<any> =[
     name : "Mainly clear, partly cloudy",
     shortName: "Cloudy",
     icon : cloudy,
+    nightIcon: cloudyNight,
     weatherCodes : [1, 2, 3]
 },
     {
@@ -27,6 +31,7 @@ export const weatherTypes : Array<any> =[
     name : "Fog and depositing rime fog",
     shortName: "Fog",
     icon : fog,
+    nightIcon: null,
     weatherCodes : [45, 48]
 },
     {
@@ -34,6 +39,7 @@ export const weatherTypes : Array<any> =[
     name : "Drizzle: Light, moderate, and dense intensity",
     shortName: "Drizzle",
     icon : drizzle,
+    nightIcon: null,
     weatherCodes : [51, 53, 55, 56, 57]
 },
     {
@@ -41,6 +47,7 @@ export const weatherTypes : Array<any> =[
     name : "Rain: Slight, moderate and heavy intensity",
     shortName: "Rain",
     icon : rain,
+    nightIcon: null,
     weatherCodes : [61, 63, 65, 66, 67,80, 81, 82]
 },
     {
@@ -48,6 +55,7 @@ export const weatherTypes : Array<any> =[
     name : "Snow fall: Slight, moderate, and heavy intensity",
     shortName: "Snow",
     icon : snow,
+    nightIcon: null,
     weatherCodes : [71, 73, 75,85, 86]
 },
   
@@ -56,6 +64,7 @@ export const weatherTypes : Array<any> =[
     name : "Thunderstorm: Slight or moderate",
     shortName: "Thunderstorm",
     icon : thunder,
+    nightIcon: null,
     weatherCodes : [95, 96, 99]
 },
     {
@@ -63,6 +72,7 @@ export const weatherTypes : Array<any> =[
     name : "Snow grains",
     shortName: "Snow grains",
     icon : snowgrains,
+    nightIcon: null,
     weatherCodes : [77]
 },
 ]
