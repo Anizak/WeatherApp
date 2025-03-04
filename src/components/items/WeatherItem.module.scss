@@ -20,4 +20,6 @@
     }
     .temperature{
         @include title(20px, $textColorLight);
-        fon
+        font-weight: 500;
+    }
+}
