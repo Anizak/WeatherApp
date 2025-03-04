@@ -6,15 +6,15 @@
 .container{
     width: $fullSize;
     min-height: 140px;
-    background-color: aqua;
-    padding: 0 20px;
+    // background-color: aqua;
+    padding: 15px 20px;
     overflow: auto;
     @include flex(space-between, flex-start, raw);
     .leftSide{
         width: 50%;
         height: $fullSize;
         // min-height: $fullSize;
-        background-color: rgb(25, 54, 108);
+        // background-color: rgb(25, 54, 108);
         @include flex(space-between, flex-start, column);
         p{
             @include title(32px, $textColorLight);
@@ -22,15 +22,19 @@
         span{
             margin-bottom: 30px !important
         }
+        .timetemp{
+            font-weight: 200;
+            color: $textColorMiddle;
+        }
     }
     .rightSide{
         width: 50%;
         height: $fullSize;
-        background-color: cadetblue;
+        // background-color: cadetblue;
         @include flex(center, center);
         img{
-            width: auto;
-            height: $fullSize;
+            width: 120px;
+            height: 120px;
         }
     }
 

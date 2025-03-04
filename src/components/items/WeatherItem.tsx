@@ -7,9 +7,6 @@ const WeatherItem = ({ data }: any) => {
   const { currentWeather } = useSelector(selectWeather);
 
   const weatherType = getWeatherType(data.weatherCode);
-  // console.log(weatherType);
-  // console.log(data);
-
   return (
     <div className={styles.container}>
       <p className={styles.time}>{data.time.split("T")[1]}</p>

@@ -6,7 +6,7 @@ import rain from "../assets/images/rain.png"
 import snow from "../assets/images/snowfall.png"
 import thunder from "../assets/images/storm.png"
 import snowgrains from "../assets/images/haze.png"
-import night from "../assets/images/night.png"
+import night  from "../assets/images/night.png"
 import cloudyNight from "../assets/images/cloudy-night.png"
 
 export const weatherTypes : Array<any> =[
