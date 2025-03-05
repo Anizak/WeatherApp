@@ -6,11 +6,13 @@ import { selectWeather } from "../../store/slices/weatherSlice/weatherSlice";
 import CurrentWeather from "../currentWeather/CurrentWeather";
 import TodaysForecast from "../todaysForcast/TodaysForecast";
 import AirConditions from "../airConditions/AirConditions";
+import WeekForecast from "../weekForecast/WeekForecast";
+import { generateWeekDay } from "../../services/functions";
 
 
 const Weather = () => {
   const {currentLocationSearch} = useSelector(selectWeather);
-  
+  generateWeekDay("2025-03-05T21:30");
   
   return (
     <div className={styles.container}>
@@ -24,7 +26,9 @@ const Weather = () => {
          {Object.keys(currentLocationSearch).length > 0 && <AirConditions/>} 
         </div>
       </div>
-      <div className={styles.rightSide}></div>
+      <div className={styles.rightSide}>
+      {Object.keys(currentLocationSearch).length > 0 && <WeekForecast/>}
+      </div>
     </div>
   );
 };

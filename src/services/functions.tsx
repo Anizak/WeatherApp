@@ -27,3 +27,11 @@ export const weatherDataWithTimes = (
   return mergedArrays;
   
 };
+
+
+export const generateWeekDay = (date : string) =>{
+    const currentDay = new Date(date);
+    const currentWeekDay = currentDay.getDay();
+    console.log(currentDay,currentWeekDay);
+    
+}

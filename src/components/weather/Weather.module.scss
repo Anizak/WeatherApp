@@ -11,7 +11,7 @@
   padding: 20px;
   overflow: auto;
   .leftSide {
-    width: 60%;
+    width: 70%;
     height: $fullSize;
     // background-color: beige;
     @include flex(space-between, center, column);
@@ -34,12 +34,12 @@
     .airConditionsBox{
       width: $fullSize;
       height: auto;
-      background-color: rgb(93, 222, 237);
+      // background-color: rgb(93, 222, 237);
     }
   }
 
   .rightSide {
-    width: 35%;
+    width: 25%;
     height: $fullSize;
     background-color: rgb(235, 235, 172);
   }

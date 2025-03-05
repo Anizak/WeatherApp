@@ -1,0 +1,14 @@
+@use "./../../styles/colors" as *;
+@use "./../../styles/mixins" as *;
+@use "./../../styles/variables" as *;
+
+
+
+.container{
+    width: $fullSize;
+    height: $fullSize;
+    background-color:aliceblue;
+    p{
+        @include title()
+    }
+}

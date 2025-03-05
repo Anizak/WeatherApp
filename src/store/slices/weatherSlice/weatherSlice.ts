@@ -8,12 +8,14 @@ type Weather = {
     loading : boolean,
     error : string,
     currentWeather : any,
+    weekData : any,
 }
 const initialState : Weather = {
     currentLocationSearch : {},
     loading : false,
     error : "",
-    currentWeather: {}
+    currentWeather: {},
+    weekData: [],
 }
 
 
@@ -35,6 +37,7 @@ const weatherSlice = createSlice({
         state.loading = false;
         state.currentLocationSearch = action.payload.location ? action.payload.location : {}; 
         state.currentWeather = action.payload.weather? action.payload.weather : {};
+        
       })
       .addCase(getLocation.rejected, (state, action) => {
         state.loading = false;

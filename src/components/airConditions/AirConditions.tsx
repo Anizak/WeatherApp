@@ -9,17 +9,29 @@ import { selectWeather } from "../../store/slices/weatherSlice/weatherSlice";
 import { getTimes } from "../../services/functions";
 
 const AirConditions = () => {
-  const {currentWeather} = useSelector(selectWeather);
+  const { currentWeather } = useSelector(selectWeather);
   const currentTime = currentWeather.current_weather.time.split("T")[1];
   const currentHour = currentTime.split(":")[0];
-  const todayTime = getTimes(currentWeather.hourly.time.slice(0, 24), [`${currentHour}:00`]);
-  console.log(todayTime);
-  const relative = currentWeather.hourly.relativehumidity_2m.find((elem:any, i:any) => i === todayTime[0].index);
-  const winddirection = currentWeather.hourly
-  console.log(relative);
-  
-  
-  
+  const todayTime = getTimes(currentWeather.hourly.time.slice(0, 24), [
+    `${currentHour}:00`,
+  ]);
+  // console.log(todayTime);
+  const relative = currentWeather.hourly.relativehumidity_2m.find(
+    (elem: any, i: any) => i === todayTime[0].index
+  );
+  const winddirection = currentWeather.hourly.winddirection_10m.find(
+    (elem: any, i: any) => i === todayTime[0].index
+  );
+  const pressure = currentWeather.hourly.surface_pressure.find(
+    (elem: any, i: any) => i === todayTime[0].index
+  );
+  const windSpeed = currentWeather.hourly.windspeed_10m.find(
+    (elem: any, i: any) => i === todayTime[0].index
+  );
+  const uvIndex = currentWeather.hourly.uv_index.find(
+    (elem: any, i: any) => i === todayTime[0].index
+  );
+
   return (
     <div className={styles.container}>
       <p>Air Conditions</p>
@@ -30,19 +42,22 @@ const AirConditions = () => {
             <p>Wind</p>
           </div>
           <p className={styles.info}>
-            20 km/h
+            {windSpeed} {currentWeather.hourly_units.windspeed_10m}
           </p>
         </div>
         <div className={styles.box}>
-        <div className={styles.titleBox}>
-            <img src={windDirection} alt="windDirection"/>
+          <div className={styles.titleBox}>
+            <img src={windDirection} alt="windDirection" />
             <p>wind direction</p>
           </div>
-          <p className={styles.info}></p>
+          <p className={styles.info}>
+            {winddirection}
+            {currentWeather.hourly_units.winddirection_10m}
+          </p>
         </div>
         <div className={styles.box}>
           <div className={styles.titleBox}>
-            <img src={relativeHumadity} alt="relative"/>
+            <img src={relativeHumadity} alt="relative" />
             <p>Relative Humidity</p>
           </div>
           <p className={styles.info}>
@@ -51,20 +66,19 @@ const AirConditions = () => {
         </div>
         <div className={styles.box}>
           <div className={styles.titleBox}>
-            <img src={surfacePressure} alt="pressure"/>
+            <img src={surfacePressure} alt="pressure" />
             <p>Surface Pressure</p>
           </div>
           <p className={styles.info}>
-            340
+            {pressure} {currentWeather.hourly_units.surface_pressure}
           </p>
         </div>
         <div className={styles.box}>
-        <div className={styles.titleBox}>
+          <div className={styles.titleBox}>
             <img src={uv} alt="uv" />
             <p>UV Index</p>
           </div>
-          <p className={styles.info}>
-          </p>
+          <p className={styles.info}>{uvIndex}</p>
         </div>
       </div>
     </div>
