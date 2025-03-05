@@ -4,11 +4,12 @@
 
 .container {
   width: 80%;
-  height: 85%;
+  height: 90%;
   background-color: $mainColorDark;
   border-radius: $outerRadius;
   @include flex(space-between, center);
-  padding: 40px;
+  padding: 20px;
+  overflow: auto;
   .leftSide {
     width: 60%;
     height: $fullSize;
@@ -30,9 +31,9 @@
       }
     }
 
-    .favouritesItemBox{
+    .airConditionsBox{
       width: $fullSize;
-      height: 200px;
+      height: auto;
       background-color: rgb(93, 222, 237);
     }
   }

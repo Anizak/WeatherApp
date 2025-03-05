@@ -1,4 +1,4 @@
-import sun from "../assets/images/sun.svg"
+import sun from "../assets/images/sun.png"
 import cloudy from "../assets/images/partly-cloudy.png"
 import fog from "../assets/images/haze.png"
 import drizzle from "../assets/images/drizzle.png"

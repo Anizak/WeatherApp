@@ -22,4 +22,7 @@
         @include title(20px, $textColorLight);
         font-weight: 500;
     }
+    &:last-child{
+        border-right: none;
+    }
 }

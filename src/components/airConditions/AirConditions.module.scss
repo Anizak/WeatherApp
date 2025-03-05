@@ -1,0 +1,51 @@
+@use "./../../styles/colors" as *;
+@use "./../../styles/mixins" as *;
+@use "./../../styles/variables" as *;
+
+.container {
+  width: $fullSize;
+  height: auto;
+  background-color: $mainColorMiddle;
+  border-radius: 15px;
+  padding: 20px 15px;
+  @include flex(space-between, flex-start, column);
+  gap: 25px;
+  p {
+    @include title();
+    font-weight: 600;
+  }
+  .conditionInfo {
+    width: $fullSize;
+    height: 140px;
+    // background-color: antiquewhite;
+    @include flex();
+    gap: 15px 10px;
+    flex-wrap: wrap;
+    .box {
+      width: calc($fullSize / 3.099);
+      height: 60px;
+      // background-color: brown;
+      @include flex(space-between, flex-start, column);
+      .titleBox {
+        width: $fullSize;
+        height: 40%;
+        // background-color: aquamarine;
+        @include flex(flex-start, center);
+        gap: 10px;
+        p {
+          text-transform: capitalize;
+        }
+        img {
+          width: auto;
+          height: $fullSize;
+        }
+      }
+      .info {
+        @include title(26px, $textColorLight);
+        text-transform: lowercase;
+        margin-left: 35px;
+        font-weight: 500;
+      }
+    }
+  }
+}

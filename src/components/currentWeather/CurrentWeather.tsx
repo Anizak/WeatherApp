@@ -7,7 +7,7 @@ const CurrentWeather = () => {
   const { currentWeather, currentLocationSearch } = useSelector(selectWeather);
   const currentWeatherCode = currentWeather.current_weather?.weathercode;
   const weatherType = getWeatherType(currentWeatherCode);
-  console.log(currentWeather);
+  // console.log(currentWeather);
   
   // const currentWeatherType = getWeatherType()
   return (

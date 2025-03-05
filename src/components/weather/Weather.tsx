@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { selectWeather } from "../../store/slices/weatherSlice/weatherSlice";
 import CurrentWeather from "../currentWeather/CurrentWeather";
 import TodaysForecast from "../todaysForcast/TodaysForecast";
+import AirConditions from "../airConditions/AirConditions";
 
 
 const Weather = () => {
@@ -19,8 +20,8 @@ const Weather = () => {
           {Object.keys(currentLocationSearch).length > 0 && <CurrentWeather/>}
          {Object.keys(currentLocationSearch).length > 0 && <TodaysForecast/>}
         </div>
-        <div className={styles.favouritesItemBox}>
-
+        <div className={styles.airConditionsBox}>
+         {Object.keys(currentLocationSearch).length > 0 && <AirConditions/>} 
         </div>
       </div>
       <div className={styles.rightSide}></div>
