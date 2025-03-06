@@ -32,6 +32,22 @@ export const weatherDataWithTimes = (
   return mergedArrays;
 };
 
+export const weekDataWithTimes = (
+  weekData: any,
+  temperatures: any,
+  weatherCodes: any,
+  weekDays: any
+) => {
+  const mergedData = weekData.map((elem: any, i: any) => ({
+    DateTime: elem.date,
+    Temperature: temperatures[i],
+    WeatherCode: weatherCodes[i],
+    weekDay: weekDays[i].weekday,
+  }));
+
+  return mergedData;
+};
+
 export const generateWeekDay = (date: string) => {
   //"2025-03-06T00:00"
   const weekData = [];
@@ -47,11 +63,11 @@ export const generateWeekDay = (date: string) => {
     const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
     let obj = {
       weekday: weekdays[date.getDay()],
-      day: `${year}-${month}-${day}T15:00}`,
-      night: `${year}-${month}-${day}T03:00}`,
+      day: `${year}-${month}-${day}T15:00`,
+      night: `${year}-${month}-${day}T03:00`,
     };
 
     weekData.push(obj);
   }
-  console.log(weekData);
+  return weekData;
 };
