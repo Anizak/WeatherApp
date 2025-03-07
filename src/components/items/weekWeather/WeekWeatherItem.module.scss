@@ -1,10 +1,33 @@
-@use "./../../styles/colors" as *;
-@use "./../../styles/mixins" as *;
-@use "./../../styles/variables" as *;
+@use "../../../styles/colors" as *;
+@use "../../../styles/mixins" as *;
+@use "../../../styles/variables" as *;
 
-
-.box{
-    width: $fullSize;
-    height: 100px;
-    background-color: darkcyan;
+.box {
+  width: $fullSize;
+  height: 80px;
+  background-color: $mainColorMiddle;
+  border-bottom: 1px solid $borderColor;
+  @include flex(space-between, center);
+  &:last-child{border-bottom: none};
+  .weather {
+    @include flex(center, center);
+    gap: 15px;
+    img {
+      width: 45px;
+      height: 45px;
+    }
+    .weatherType {
+      font-weight: 600;
+      color: $textColorLight;
+    }
+  }
+  p {
+    text-transform: capitalize;
+  }
+  .temperature {
+    color: $textColorDark;
+    span{
+        color: $textColorLight;
+    }
+  }
 }

@@ -3,7 +3,7 @@
 @use "./../../styles/variables" as *;
 
 .container {
-  width: 80%;
+  width: 85%;
   height: 90%;
   background-color: $mainColorDark;
   border-radius: $outerRadius;
@@ -41,6 +41,8 @@
   .rightSide {
     width: 25%;
     height: $fullSize;
-    background-color: rgb(235, 235, 172);
+    background-color: $mainColorMiddle;
+    padding: 25px;
+    border-radius: $outerRadius;
   }
 }

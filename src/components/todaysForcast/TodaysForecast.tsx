@@ -9,21 +9,19 @@ const TodaysForecast = () => {
   const { currentWeather } = useSelector(selectWeather);
   const timeData = getTimes(currentWeather.hourly.time.slice(0, 24), times);
   const indexes = timeData.map((obj) => obj.index);
-  const isDay = currentWeather.hourly.is_day.filter((elem: any, i: any) =>
-    indexes.includes(i)
-  );
+  const isDay = currentWeather.hourly.is_day.filter((elem: any, i: any) => indexes.includes(i));
 
   const temperatures = filterWeatherData(currentWeather.hourly.temperature_2m, indexes);
   const weatherCodes = filterWeatherData(currentWeather.hourly.weathercode, indexes);
 
-  const weatherTimeData = weatherDataWithTimes(timeData, isDay, temperatures,weatherCodes);
+  const weatherTimeData = weatherDataWithTimes(timeData, isDay, temperatures, weatherCodes);
 
   return (
     <div className={styles.container}>
       <p>Today's Forecast</p>
       <div className={styles.todayFoecast}>
         {weatherTimeData.map((elem: any) => {
-          return <WeatherItem key={elem.time} data={elem}/>;
+          return <WeatherItem key={elem.time} data={elem} />;
         })}
       </div>
     </div>

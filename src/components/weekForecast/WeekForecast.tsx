@@ -1,11 +1,8 @@
 import { useSelector } from "react-redux";
-import {
-  filterWeatherData,
-  generateWeekDay,
-  weekDataWithTimes,
-} from "../../services/functions";
+import { filterWeatherData, generateWeekDay, weekDataWithTimes } from "../../services/functions";
 import styles from "./WeekForecast.module.scss";
 import { selectWeather } from "../../store/slices/weatherSlice/weatherSlice";
+import WeekWeatherItem from "../items/weekWeather/WeekWeatherItem";
 
 const WeekForecast = () => {
   const { currentWeather } = useSelector(selectWeather);
@@ -26,30 +23,29 @@ const WeekForecast = () => {
   const dayIndexes = filteredDatesForDay.map((obj: any) => obj.index);
   const nightIndexes = filteredDatesForNight.map((obj: any) => obj.index);
 
-  const dayTemperatures = filterWeatherData(currentWeather.hourly.temperature_2m,dayIndexes);
-  const dayWeatherCodes = filterWeatherData(currentWeather.hourly.weathercode,dayIndexes);
+  const dayTemperatures = filterWeatherData(currentWeather.hourly.temperature_2m, dayIndexes);
+  const dayWeatherCodes = filterWeatherData(currentWeather.hourly.weathercode, dayIndexes);
 
-  const nightTemperatures = filterWeatherData(currentWeather.hourly.temperature_2m,nightIndexes);
-  const nightWeatherCodes = filterWeatherData(currentWeather.hourly.weathercode,nightIndexes);
+  const nightTemperatures = filterWeatherData(currentWeather.hourly.temperature_2m, nightIndexes);
+  const nightWeatherCodes = filterWeatherData(currentWeather.hourly.weathercode, nightIndexes);
 
   //is_day = 0 kam is_day = 1 kariq ka avelacnelu datai mej?
-  const weekTimeForDay = weekDataWithTimes(
-    filteredDatesForDay,
-    dayTemperatures,
-    dayWeatherCodes,
-    weekData
-  );
-  const weekTimeForNight = weekDataWithTimes(
-    filteredDatesForNight,
-    nightTemperatures,
-    nightWeatherCodes,
-    weekData
-  );
-  console.log(weekTimeForDay, weekTimeForNight);
+  const weekTimeForDay = weekDataWithTimes(filteredDatesForDay, dayTemperatures, dayWeatherCodes, weekData);
+  const weekTimeForNight = weekDataWithTimes(filteredDatesForNight, nightTemperatures, nightWeatherCodes, weekData);
+  // console.log(weekTimeForDay, weekTimeForNight);
 
+  const weekFinalResult  = weekTimeForDay.map((obj : any, i: number) => {
+    return {...obj, nightTemperature : weekTimeForNight[i].temperature}
+  })
+
+  console.log(weekFinalResult);
+  
   return (
     <div className={styles.container}>
       <p>7-Day Forecast</p>
+     { weekFinalResult.map((elem : any) => {
+        return <WeekWeatherItem key = {elem.dateTime} data={elem}/>
+     }) }
     </div>
   );
 };

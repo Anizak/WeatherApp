@@ -9,26 +9,23 @@ import AirConditions from "../airConditions/AirConditions";
 import WeekForecast from "../weekForecast/WeekForecast";
 import { generateWeekDay } from "../../services/functions";
 
-
 const Weather = () => {
-  const {currentLocationSearch} = useSelector(selectWeather);
+  const { currentLocationSearch } = useSelector(selectWeather);
   generateWeekDay("2025-03-05T21:30");
-  
+
   return (
     <div className={styles.container}>
       <div className={styles.leftSide}>
-        <Search/>
+        <Search />
         <div className={styles.searchItemBox}>
-          {Object.keys(currentLocationSearch).length > 0 && <CurrentWeather/>}
-         {Object.keys(currentLocationSearch).length > 0 && <TodaysForecast/>}
+          {Object.keys(currentLocationSearch).length > 0 && <CurrentWeather />}
+          {Object.keys(currentLocationSearch).length > 0 && <TodaysForecast />}
         </div>
         <div className={styles.airConditionsBox}>
-         {Object.keys(currentLocationSearch).length > 0 && <AirConditions/>} 
+          {Object.keys(currentLocationSearch).length > 0 && <AirConditions />}
         </div>
       </div>
-      <div className={styles.rightSide}>
-      {Object.keys(currentLocationSearch).length > 0 && <WeekForecast/>}
-      </div>
+      <div className={styles.rightSide}>{Object.keys(currentLocationSearch).length > 0 && <WeekForecast />}</div>
     </div>
   );
 };

@@ -77,27 +77,11 @@ export const weatherTypes: Array<any> = [
   },
 ];
 
-export const addressTypes: Array<string> = [
-  "city",
-  "country",
-  "village",
-  "town",
-  "road",
-  "suburb",
-  "state",
-  "street",
-];
+export const addressTypes: Array<string> = ["city", "country", "village", "town", "road", "suburb", "state", "street"];
 
-export const times: Array<string> = [
-  "06:00",
-  "09:00",
-  "12:00",
-  "15:00",
-  "18:00",
-  "21:00",
-];
+export const times: Array<string> = ["06:00", "09:00", "12:00", "15:00", "18:00", "21:00"];
 
-export const weekdays : any = {
+export const weekdays: any = {
   0: "San",
   1: "Man",
   2: "Tue",

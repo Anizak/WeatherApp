@@ -7,7 +7,7 @@
 .container{
     width: $fullSize;
     height: $fullSize;
-    background-color:aliceblue;
+    // background-color:aliceblue;
     p{
         @include title()
     }
