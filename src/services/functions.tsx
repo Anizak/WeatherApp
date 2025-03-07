@@ -71,3 +71,9 @@ export const generateWeekDay = (date: string) => {
   }
   return weekData;
 };
+
+
+
+export const filterWeatherData = (data: any[], indexes: number[]) => {
+  return data.filter((_, i) => indexes.includes(i));
+};

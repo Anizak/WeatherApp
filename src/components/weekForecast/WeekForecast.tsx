@@ -1,5 +1,9 @@
 import { useSelector } from "react-redux";
-import { generateWeekDay, weekDataWithTimes } from "../../services/functions";
+import {
+  filterWeatherData,
+  generateWeekDay,
+  weekDataWithTimes,
+} from "../../services/functions";
 import styles from "./WeekForecast.module.scss";
 import { selectWeather } from "../../store/slices/weatherSlice/weatherSlice";
 
@@ -22,19 +26,11 @@ const WeekForecast = () => {
   const dayIndexes = filteredDatesForDay.map((obj: any) => obj.index);
   const nightIndexes = filteredDatesForNight.map((obj: any) => obj.index);
 
-  const dayTemperatures = currentWeather.hourly.temperature_2m.filter(
-    (elem: any, i: any) => dayIndexes.includes(i)
-  );
-  const dayWeatherCodes = currentWeather.hourly.weathercode.filter(
-    (elem: any, i: any) => dayIndexes.includes(i)
-  );
-  const nightTemperatures = currentWeather.hourly.temperature_2m.filter(
-    (elem: any, i: any) => nightIndexes.includes(i)
-  );
+  const dayTemperatures = filterWeatherData(currentWeather.hourly.temperature_2m,dayIndexes);
+  const dayWeatherCodes = filterWeatherData(currentWeather.hourly.weathercode,dayIndexes);
 
-  const nightWeatherCodes = currentWeather.hourly.weathercode.filter(
-    (elem: any, i: any) => nightIndexes.includes(i)
-  );
+  const nightTemperatures = filterWeatherData(currentWeather.hourly.temperature_2m,nightIndexes);
+  const nightWeatherCodes = filterWeatherData(currentWeather.hourly.weathercode,nightIndexes);
 
   //is_day = 0 kam is_day = 1 kariq ka avelacnelu datai mej?
   const weekTimeForDay = weekDataWithTimes(
