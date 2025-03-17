@@ -9,8 +9,16 @@
     form{
         width: $fullSize;
         height: $fullSize;
+        position: relative;
+        .searchIcon{
+            position: absolute;
+            top: calc(50% - 13px);
+            left: 16px;
+            font-size: 26px;
+            color: $textColorMiddle;
+        }
 
-        input{
+        .searchField{
             width: $fullSize;
             height: $fullSize;
             background-color: $mainColorMiddle;
@@ -21,6 +29,14 @@
             font-size: 16px;
             font-weight: 200;
             padding: 0 $inputPadding;
+            padding-left: 56px;
+        }
+        .transparent{
+            background-color: rgba(0, 0, 0, 0.282);
+            color: $textColorLight;
+            &::placeholder{
+                color: $textColorMiddle;
+            }
         }
     }
 }

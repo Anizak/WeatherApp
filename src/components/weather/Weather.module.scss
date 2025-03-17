@@ -10,6 +10,46 @@
   @include flex(space-between, center);
   padding: 20px;
   overflow: auto;
+  position: relative;
+  .video{
+    width: $fullSize;
+    height: $fullSize;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    object-fit: cover;
+  }
+  .searchBox{
+    width: $fullSize;
+    height: 250px;
+    z-index: 9;
+    @include flex(center, center);
+    .searchField{
+      width: 65%;
+      height: $fullSize;
+      background-color: rgba(6, 4, 38, 0.285);
+      border-radius: 15px;
+      padding: 0 20px;
+      @include flex(center, center, column);
+      gap : 10px;
+      h1{
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-weight: 300;
+        color: $textColorLight;
+        margin-top : 20px;
+      }
+      p{
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-weight: 200;
+        color: $textColorLight;
+      }
+    }
+  }
   .leftSide {
     width: 70%;
     height: $fullSize;
