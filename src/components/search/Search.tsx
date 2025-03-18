@@ -5,19 +5,18 @@ import { getLocation } from "../../store/slices/weatherSlice/weatherApi";
 import { AppDispatch } from "../../store/store";
 import { selectWeather } from "../../store/slices/weatherSlice/weatherSlice";
 import { CiSearch } from "react-icons/ci";
+import Loader from "../../sharedComponents/loaders/Loader";
 
-
-const Search = ({isTransparent}: any) => {
+const Search = ({ isTransparent }: any) => {
   const [value, setValue] = useState<string>("");
   const dispatch = useDispatch<AppDispatch>();
-  const { currentLocationSearch } = useSelector(selectWeather);
+  const { currentLocationSearch, loading } = useSelector(selectWeather);
   useEffect(() => {
     if (Object.keys(currentLocationSearch).length > 0) {
       setValue("");
     }
   }, [currentLocationSearch]);
 
-  
   const search = (e: any) => {
     e.preventDefault();
     dispatch(getLocation(value));
@@ -26,7 +25,13 @@ const Search = ({isTransparent}: any) => {
   return (
     <div className={styles.searchBox}>
       <form onSubmit={search}>
-      <CiSearch className={styles.searchIcon}/>
+        {loading ? (
+          <div className={`${styles.searchIcon} ${styles.loaderBox} `}>
+            <Loader />
+          </div>
+        ) : (
+          <CiSearch className={styles.searchIcon} />
+        )}
         <input
           type="search"
           value={value}
@@ -34,7 +39,6 @@ const Search = ({isTransparent}: any) => {
           placeholder="Check the weather in your area"
           className={isTransparent ? `${styles.searchField} ${styles.transparent}` : styles.searchField}
         />
-
       </form>
     </div>
   );
